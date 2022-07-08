@@ -1,28 +1,31 @@
 import { Link } from 'react-router-dom';
-import { HiOutlineExternalLink } from 'react-icons/hi';
+import OutgoingLink from '../OutgoingLink';
+import MobileNavigation from './MobileNavigation';
 
 const Navbar = () => {
 	return (
-		<nav className="bg-primary-dark text-secondary-light">
-			<div className="container mx-auto py-4 flex justify-between">
-				<Link to="/" className="text-xl leading-none">
+		<nav className="bg-primary-dark text-secondary-light relative">
+			<div className="container mx-auto p-4 flex justify-between items-center">
+				<Link to="/" className="text-xl">
 					Summoners
 				</Link>
 
-				<div className="flex justify-between gap-8">
+				{/* Standard navigation hidden on mobile */}
+				<div className="hidden space-x-8 md:flex">
 					<Link to="about">About</Link>
 
-					<a href="https://leagueoflegends.com" target="_blank">
-						League of Legends <HiOutlineExternalLink className="inline" />
-					</a>
+					<OutgoingLink
+						name="League of Legends"
+						href="https://leagueoflegends.com"
+					/>
 
-					<a
+					<OutgoingLink
+						name="Teamfight Tactics"
 						href="https://teamfighttactics.leagueoflegends.com"
-						target="_blank"
-					>
-						TFT <HiOutlineExternalLink className="inline" />
-					</a>
+					/>
 				</div>
+
+				<MobileNavigation />
 			</div>
 		</nav>
 	);
