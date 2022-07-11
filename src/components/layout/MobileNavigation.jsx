@@ -1,10 +1,17 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import OutgoingLink from '../OutgoingLink';
 
 const MobileNavigation = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const location = useLocation();
+
+	// Close the menu whenever the user clicks any Link tag
+	useEffect(() => {
+		setIsOpen(false);
+	}, [location]);
 
 	return (
 		<div className="md:hidden">
@@ -18,12 +25,12 @@ const MobileNavigation = () => {
 
 			{/* Mobile navigation */}
 			<div
-				className={`bg-primary-dark text-secondary-light absolute h-screen right-0 mt-4 duration-300 ${
-					!isOpen && 'translate-x-full'
+				className={`bg-primary-dark text-secondary-light absolute h-screen right-0 mt-4 pt-6 duration-1000 ${
+					!isOpen && 'translate-x-full hidden'
 				}`}
 			>
-				<div className="flex flex-col items-center space-y-4 px-4">
-					<Link to="about">About</Link>
+				<div className="flex flex-col items-center space-y-3 px-8">
+					<Link to="about">About Summoners</Link>
 
 					<OutgoingLink
 						name="League of Legends"
