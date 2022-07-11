@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		@apply overflow-hidden md:overflow-auto bg-primary text-secondary;
+	html,
+	body {
+		@apply overflow-x-hidden bg-primary text-white;
+	}
+
+	#root {
+		@apply flex flex-col min-h-screen;
 	}
 }
