@@ -14,7 +14,10 @@ function App() {
 			<AppContainer>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="summoner/:region/:summonerName" element={<Summoner />} />
+					<Route
+						path="summoners/:region/:summonerName"
+						element={<Summoner />}
+					/>
 					<Route path="about" element={<About />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
