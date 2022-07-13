@@ -3,7 +3,7 @@ import OutgoingLink from '../OutgoingLink';
 
 const FooterNavigation = () => {
 	return (
-		<nav className="w-full text-secondary-dark text-center">
+		<nav className="w-full text-secondary-dark">
 			<ul className="grid grid-cols-2 lg:flex lg:justify-evenly">
 				<li>
 					<Link to="about">About Summoners</Link>
