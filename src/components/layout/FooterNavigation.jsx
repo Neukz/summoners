@@ -9,7 +9,7 @@ const FooterNavigation = () => {
 					<Link to="about">About Summoners</Link>
 				</li>
 
-				<li>
+				<li className="lg:order-1">
 					<OutgoingLink
 						name="Riot Games API"
 						href="https://developer.riotgames.com"
@@ -23,7 +23,7 @@ const FooterNavigation = () => {
 					/>
 				</li>
 
-				<li>
+				<li className="lg:order-2">
 					<OutgoingLink
 						name="CommunityDragon"
 						href="https://communitydragon.org"
@@ -37,7 +37,7 @@ const FooterNavigation = () => {
 					/>
 				</li>
 
-				<li>
+				<li className="lg:order-3">
 					<OutgoingLink
 						name="Source code"
 						href="https://github.com/Neukz/summoners"
