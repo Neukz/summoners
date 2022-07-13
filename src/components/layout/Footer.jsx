@@ -7,16 +7,10 @@ const Footer = () => {
 				<FooterNavigation />
 
 				<p className="text-sm text-center text-slate-400">
-					Summoners was created under Riot Games'{' '}
-					<a
-						className="text-white"
-						href="https://www.riotgames.com/legal"
-						target="_blank"
-					>
-						"Legal Jibber Jabber"
-					</a>{' '}
-					policy using assets owned by Riot Games. Riot Games does not endorse
-					or sponsor this project.
+					Summoners isn't endorsed by Riot Games and doesn't reflect the views
+					or opinions of Riot Games or anyone officially involved in producing
+					or managing Riot Games properties. Riot Games, and all associated
+					properties are trademarks or registered trademarks of Riot Games, Inc.
 				</p>
 
 				<p className="text-sm text-center text-slate-400" translate="no">
