@@ -25,8 +25,8 @@ const MobileNavigation = () => {
 
 			{/* Mobile navigation */}
 			<div
-				className={`bg-primary-dark text-secondary-light absolute h-screen right-0 mt-4 pt-6 duration-1000 ${
-					!isOpen && 'translate-x-full hidden'
+				className={`bg-primary-dark text-secondary-light absolute h-screen right-0 mt-4 pt-6 duration-300 ${
+					!isOpen && 'translate-x-full'
 				}`}
 			>
 				<div className="flex flex-col items-center space-y-3 px-8">
