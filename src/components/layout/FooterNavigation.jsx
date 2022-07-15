@@ -5,7 +5,7 @@ const FooterNavigation = () => {
 	return (
 		<nav className="text-secondary-dark w-full">
 			<ul className="grid gap-y-1 grid-cols-2 sm:grid-cols-3 md:gap-y-0 lg:flex lg:justify-evenly">
-				<li className="order-1">
+				<li className="order-1 sm:order-none">
 					<Link to="about">About Summoners</Link>
 				</li>
 
