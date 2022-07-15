@@ -17,7 +17,7 @@ const MobileNavigation = () => {
 		<div className="md:hidden">
 			{/* Hamburger button */}
 			<GiHamburgerMenu
-				className={`text-xl cursor-pointer duration-300 ${
+				className={`text-xl cursor-pointer relative duration-300 ${
 					isOpen && 'rotate-90'
 				}`}
 				onClick={() => setIsOpen(!isOpen)}
@@ -25,23 +25,29 @@ const MobileNavigation = () => {
 
 			{/* Mobile navigation */}
 			<div
-				className={`bg-primary-dark text-secondary-light absolute h-screen right-0 mt-4 pt-6 duration-300 ${
+				className={`bg-primary-dark text-secondary-light fixed -z-10 h-screen right-0 top-0 py-20 duration-300 ${
 					!isOpen && 'translate-x-full'
 				}`}
 			>
-				<div className="flex flex-col items-center space-y-3 px-8">
-					<Link to="about">About Summoners</Link>
+				<ul className="space-y-2 px-8">
+					<li>
+						<Link to="about">About Summoners</Link>
+					</li>
 
-					<OutgoingLink
-						name="League of Legends"
-						href="https://leagueoflegends.com"
-					/>
+					<li>
+						<OutgoingLink
+							name="League of Legends"
+							href="https://leagueoflegends.com"
+						/>
+					</li>
 
-					<OutgoingLink
-						name="Teamfight Tactics"
-						href="https://teamfighttactics.leagueoflegends.com"
-					/>
-				</div>
+					<li>
+						<OutgoingLink
+							name="Teamfight Tactics"
+							href="https://teamfighttactics.leagueoflegends.com"
+						/>
+					</li>
+				</ul>
 			</div>
 		</div>
 	);

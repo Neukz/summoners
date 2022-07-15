@@ -2,7 +2,7 @@ import FooterNavigation from './FooterNavigation';
 
 const Footer = () => {
 	return (
-		<footer className="bg-primary-dark w-full">
+		<footer className="bg-primary-dark w-full z-10">
 			<div className="container mx-auto p-4 space-y-2 text-center text-xs md:text-sm">
 				<FooterNavigation />
 
