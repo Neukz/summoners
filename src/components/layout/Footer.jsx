@@ -3,7 +3,7 @@ import FooterNavigation from './FooterNavigation';
 const Footer = () => {
 	return (
 		<footer className="bg-primary-dark w-full">
-			<div className="container mx-auto p-4 space-y-2 text-sm text-center">
+			<div className="container mx-auto p-4 space-y-2 text-center text-xs md:text-sm">
 				<FooterNavigation />
 
 				<p className="text-xs text-slate-400">
