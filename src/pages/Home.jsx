@@ -1,4 +1,4 @@
-import SearchSummonerForm from '../SearchSummonerForm';
+import SearchSummonerForm from '../components/SearchSummonerForm';
 
 const Home = () => {
 	return (
