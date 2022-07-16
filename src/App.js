@@ -7,23 +7,27 @@ import Navbar from './components/layout/Navbar';
 import AppContainer from './components/layout/AppContainer';
 import Footer from './components/layout/Footer';
 
+import { RiotContextProvider } from './context/riot/RiotContext';
+
 function App() {
 	return (
-		<Router>
-			<Navbar />
-			<AppContainer>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route
-						path="summoners/:region/:summonerName"
-						element={<Summoner />}
-					/>
-					<Route path="about" element={<About />} />
-					<Route path="*" element={<NotFound />} />
-				</Routes>
-			</AppContainer>
-			<Footer />
-		</Router>
+		<RiotContextProvider>
+			<Router>
+				<Navbar />
+				<AppContainer>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route
+							path="summoners/:region/:summonerName"
+							element={<Summoner />}
+						/>
+						<Route path="about" element={<About />} />
+						<Route path="*" element={<NotFound />} />
+					</Routes>
+				</AppContainer>
+				<Footer />
+			</Router>
+		</RiotContextProvider>
 	);
 }
 
