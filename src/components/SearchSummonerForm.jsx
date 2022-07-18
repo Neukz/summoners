@@ -1,17 +1,20 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
-
 import { regions } from '../constants/regions';
 
 const SearchSummonerForm = () => {
 	const [summonerName, setSummonerName] = useState('');
-	// Set NA1 as default region code
-	const [regionCode, setRegionCode] = useState(regions[0].code);
+	// Set NA as default region
+	const [selectedRegion, setSelectedRegion] = useState(regions[0].abbreviation);
+
+	const navigate = useNavigate();
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		console.log(summonerName);
-		console.log(regionCode);
+
+		// Navigate to Summoner page
+		navigate(`summoners/${selectedRegion.toLowerCase()}/${summonerName}`);
 	};
 
 	return (
@@ -44,13 +47,13 @@ const SearchSummonerForm = () => {
 				{regions.map(region => (
 					<abbr
 						className={`no-underline rounded px-2 py-1 cursor-pointer hover:translate-y-1 duration-100 ${
-							region.code === regionCode
+							region.abbreviation === selectedRegion
 								? 'bg-secondary text-primary-dark'
 								: 'bg-primary-light'
 						}`}
 						title={region.name}
 						key={region.abbreviation}
-						onClick={() => setRegionCode(region.code)}
+						onClick={() => setSelectedRegion(region.abbreviation)}
 					>
 						{region.abbreviation}
 					</abbr>

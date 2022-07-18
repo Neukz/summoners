@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react';
 import riotReducer from './riotReducer';
 import * as types from '../../constants/actionTypes';
+import axios from 'axios';
 
 const RiotContext = createContext();
 export default RiotContext;
@@ -8,11 +9,36 @@ export default RiotContext;
 export const RiotContextProvider = ({ children }) => {
 	const initialState = {
 		summoner: {},
-		dataLOL: [],
-		dataTFT: []
+		LoLStats: [],
+		TFTStats: []
 	};
 
 	const [state, dispatch] = useReducer(riotReducer, initialState);
 
-	return <RiotContext.Provider value={{}}>{children}</RiotContext.Provider>;
+	// Actions
+
+	// Get Summoner
+	const getSummoner = async (region, summonerName) => {
+		// const encoded = encodeURIComponent(summonerName);
+		try {
+			const res = await axios.get(
+				process.env.REACT_APP_API_URL + `/summoners/${region}/${summonerName}`
+			);
+
+			dispatch({ type: types.GET_SUMMONER, payload: res.data });
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	return (
+		<RiotContext.Provider
+			value={{
+				...state,
+				getSummoner
+			}}
+		>
+			{children}
+		</RiotContext.Provider>
+	);
 };
