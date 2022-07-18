@@ -1,58 +1,47 @@
-// Game regions mapped to their respective game IDs used in the API
+// Game regions mapped to abbreviations
 export const regions = [
 	{
 		name: 'North America',
-		abbreviation: 'NA',
-		code: 'NA1'
+		abbreviation: 'NA'
 	},
 	{
 		name: 'Europe West',
-		abbreviation: 'EUW',
-		code: 'EUW1'
+		abbreviation: 'EUW'
 	},
 	{
 		name: 'Europe Nordic & East',
-		abbreviation: 'EUNE',
-		code: 'EUN1'
+		abbreviation: 'EUNE'
 	},
 	{
 		name: 'Republic of Korea',
-		abbreviation: 'KR',
-		code: 'KR'
+		abbreviation: 'KR'
 	},
 	{
 		name: 'Brazil',
-		abbreviation: 'BR',
-		code: 'BR1'
+		abbreviation: 'BR'
 	},
 	{
 		name: 'Japan',
-		abbreviation: 'JP',
-		code: 'JP1'
+		abbreviation: 'JP'
 	},
 	{
 		name: 'Russia',
-		abbreviation: 'RU',
-		code: 'RU1'
+		abbreviation: 'RU'
 	},
 	{
 		name: 'Oceania',
-		abbreviation: 'OCE',
-		code: 'OC1'
+		abbreviation: 'OCE'
 	},
 	{
 		name: 'Turkey',
-		abbreviation: 'TR',
-		code: 'TR1'
+		abbreviation: 'TR'
 	},
 	{
 		name: 'Latin America North',
-		abbreviation: 'LAN',
-		code: 'LA1'
+		abbreviation: 'LAN'
 	},
 	{
 		name: 'Latin America South',
-		abbreviation: 'LAS',
-		code: 'LA2'
+		abbreviation: 'LAS'
 	}
 ];
