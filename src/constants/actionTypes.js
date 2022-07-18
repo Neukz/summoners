@@ -1,6 +1,6 @@
 // Action types for riotReducer
 
-// Get summoner account and League of Legends data
+// Get summoner account data and stats for both games
 export const GET_SUMMONER = 'GET_SUMMONER';
-// Get Teamfight Tactics data
-export const GET_TFT_DATA = 'GET_TFT_DATA';
+// Clear summoner data from state
+export const CLEAR_SUMMONER = 'CLEAR_SUMMONER';
