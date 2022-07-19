@@ -19,7 +19,6 @@ export const RiotContextProvider = ({ children }) => {
 
 	// Get Summoner
 	const getSummoner = async (region, summonerName) => {
-		// const encoded = encodeURIComponent(summonerName);
 		try {
 			const res = await axios.get(
 				process.env.REACT_APP_API_URL + `/summoners/${region}/${summonerName}`
@@ -31,11 +30,15 @@ export const RiotContextProvider = ({ children }) => {
 		}
 	};
 
+	// Clear Summoner
+	const clearSummoner = () => dispatch({ type: types.CLEAR_SUMMONER });
+
 	return (
 		<RiotContext.Provider
 			value={{
 				...state,
-				getSummoner
+				getSummoner,
+				clearSummoner
 			}}
 		>
 			{children}

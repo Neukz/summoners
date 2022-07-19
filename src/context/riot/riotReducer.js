@@ -10,6 +10,14 @@ const riotReducer = (state, { type, payload }) => {
 				TFTStats: payload.stats.TFT
 			};
 
+		case types.CLEAR_SUMMONER:
+			return {
+				...state,
+				summoner: {},
+				LoLStats: [],
+				TFTStats: []
+			};
+
 		default:
 			return state;
 	}
