@@ -3,10 +3,10 @@ import FooterNavigation from './FooterNavigation';
 const Footer = () => {
 	return (
 		<footer className="bg-primary-dark w-full z-10">
-			<div className="container mx-auto p-4 space-y-2 text-center text-xs md:text-sm">
+			<div className="container mx-auto p-4 space-y-2 text-center text-xs">
 				<FooterNavigation />
 
-				<p className="text-xs text-slate-400">
+				<p className="text-slate-400">
 					Summoners isn't endorsed by Riot Games and doesn't reflect the views
 					or opinions of Riot Games or anyone officially involved in producing
 					or managing Riot Games properties. Riot Games, and all associated
