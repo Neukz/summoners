@@ -10,7 +10,8 @@ export const RiotContextProvider = ({ children }) => {
 	const initialState = {
 		summoner: {},
 		LoLStats: [],
-		TFTStats: []
+		TFTStats: [],
+		error: null
 	};
 
 	const [state, dispatch] = useReducer(riotReducer, initialState);
@@ -26,19 +27,24 @@ export const RiotContextProvider = ({ children }) => {
 
 			dispatch({ type: types.GET_SUMMONER, payload: res.data });
 		} catch (error) {
-			console.log(error);
+			// Set error
+			dispatch({ type: types.SET_ERROR, payload: error.response });
 		}
 	};
 
 	// Clear Summoner
 	const clearSummoner = () => dispatch({ type: types.CLEAR_SUMMONER });
 
+	// Clear Error
+	const clearError = () => dispatch({ type: types.CLEAR_ERROR });
+
 	return (
 		<RiotContext.Provider
 			value={{
 				...state,
 				getSummoner,
-				clearSummoner
+				clearSummoner,
+				clearError
 			}}
 		>
 			{children}

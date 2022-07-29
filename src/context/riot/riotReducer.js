@@ -18,6 +18,22 @@ const riotReducer = (state, { type, payload }) => {
 				TFTStats: []
 			};
 
+		case types.SET_ERROR:
+			return {
+				...state,
+				error: {
+					status: payload.status,
+					reason: payload.statusText,
+					message: payload.data.message
+				}
+			};
+
+		case types.CLEAR_ERROR:
+			return {
+				...state,
+				error: null
+			};
+
 		default:
 			return state;
 	}
