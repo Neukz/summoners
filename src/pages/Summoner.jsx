@@ -1,23 +1,30 @@
 import { useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import SummonerProfile from '../components/SummonerProfile';
 import QueueCard from '../components/QueueCard';
 
 import RiotContext from '../context/riot/RiotContext';
 
 const Summoner = () => {
-	const { getSummoner, clearSummoner, LoLStats, TFTStats } =
+	const { getSummoner, clearSummoner, LoLStats, TFTStats, error } =
 		useContext(RiotContext);
 	const { region, summonerName } = useParams();
 
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		getSummoner(region, summonerName);
+
+		// Navigate to NotFound if error occurs
+		if (error) {
+			navigate('404', { replace: true });
+		}
 
 		// Clear summoner data on unmount
 		return () => {
 			clearSummoner();
 		};
-	}, [region, summonerName]);
+	}, [region, summonerName, error]);
 
 	return (
 		<>

@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Summoner from './pages/Summoner';
 import About from './pages/About';
@@ -22,7 +27,8 @@ function App() {
 							element={<Summoner />}
 						/>
 						<Route path="about" element={<About />} />
-						<Route path="*" element={<NotFound />} />
+						<Route path="404" element={<NotFound />} />
+						<Route path="*" element={<Navigate to="404" replace />} />
 					</Routes>
 				</AppContainer>
 				<Footer />
