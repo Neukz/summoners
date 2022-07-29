@@ -1,12 +1,31 @@
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import RiotContext from '../context/riot/RiotContext';
+
 const NotFound = () => {
+	const { error, clearError } = useContext(RiotContext);
+
+	useEffect(() => {
+		// Clear error on unmount
+		return () => {
+			clearError();
+		};
+	}, []);
+
 	return (
 		<div className="flex flex-col justify-center items-center text-center space-y-4">
 			<header>
-				<h1 className="text-6xl md:text-7xl">404</h1>
-				<h2 className="text-4xl md:text-5xl">Page Not Found</h2>
+				<h1 className="text-6xl md:text-7xl">{error ? error.status : 404}</h1>
+				<h2 className="text-4xl md:text-5xl">
+					{error ? error.reason : 'Page Not Found'}
+				</h2>
 			</header>
+
+			{/* Some reasons returned by Riot API are equal to messages */}
+			{error && error.reason.toLowerCase() !== error.message.toLowerCase() && (
+				<p className="md:text-lg">{error.message}</p>
+			)}
 
 			<img
 				src="https://raw.communitydragon.org/latest/game/assets/loadouts/summoneremotes/champions/blitzcrank/blitzcrank_sad_confused_vfx.png"
