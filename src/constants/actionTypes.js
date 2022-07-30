@@ -11,3 +11,6 @@ export const SET_ERROR = 'SET_ERROR';
 
 // Clear error
 export const CLEAR_ERROR = 'CLEAR_ERROR';
+
+// Set loading
+export const SET_LOADING = 'SET_LOADING';

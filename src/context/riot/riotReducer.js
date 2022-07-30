@@ -7,7 +7,9 @@ const riotReducer = (state, { type, payload }) => {
 				...state,
 				summoner: payload.summoner,
 				LoLStats: payload.stats.LoL,
-				TFTStats: payload.stats.TFT
+				TFTStats: payload.stats.TFT,
+				// Set loading to false
+				loading: false
 			};
 
 		case types.CLEAR_SUMMONER:
@@ -25,13 +27,21 @@ const riotReducer = (state, { type, payload }) => {
 					status: payload.status,
 					reason: payload.statusText,
 					message: payload.data.message
-				}
+				},
+				// Set loading to false
+				loading: false
 			};
 
 		case types.CLEAR_ERROR:
 			return {
 				...state,
 				error: null
+			};
+
+		case types.SET_LOADING:
+			return {
+				...state,
+				loading: true
 			};
 
 		default:

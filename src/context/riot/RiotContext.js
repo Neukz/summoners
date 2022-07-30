@@ -11,7 +11,8 @@ export const RiotContextProvider = ({ children }) => {
 		summoner: {},
 		LoLStats: [],
 		TFTStats: [],
-		error: null
+		error: null,
+		loading: false
 	};
 
 	const [state, dispatch] = useReducer(riotReducer, initialState);
@@ -20,6 +21,9 @@ export const RiotContextProvider = ({ children }) => {
 
 	// Get Summoner
 	const getSummoner = async (region, summonerName) => {
+		// Set loading
+		dispatch({ type: types.SET_LOADING });
+
 		try {
 			const res = await axios.get(
 				process.env.REACT_APP_API_URL + `/summoners/${region}/${summonerName}`
