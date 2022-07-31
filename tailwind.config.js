@@ -16,6 +16,10 @@ module.exports = {
 				secondary: '#f2c584',
 				'secondary-light': '#f2d492',
 				'secondary-dark': '#f2b576'
+			},
+			fontFamily: {
+				'open-sans': ['"Open Sans"', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif']
 			}
 		}
 	},
