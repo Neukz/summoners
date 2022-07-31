@@ -3,41 +3,41 @@ import OutgoingLink from '../OutgoingLink';
 
 const FooterNavigation = () => {
 	return (
-		<nav className="text-secondary-dark w-full lg:text-sm">
+		<nav className="text-secondary w-full lg:text-sm">
 			<ul className="grid gap-y-1 grid-cols-2 sm:grid-cols-3 md:gap-y-0 lg:flex lg:justify-evenly">
-				<li className="order-1 sm:order-none">
+				<li className="order-1 sm:order-none hover:text-secondary-dark">
 					<Link to="about">About Summoners</Link>
 				</li>
 
-				<li className="order-3 sm:order-none">
+				<li className="order-3 sm:order-none hover:text-secondary-dark">
 					<OutgoingLink
 						name="League of Legends"
 						href="https://leagueoflegends.com"
 					/>
 				</li>
 
-				<li className="order-5 sm:order-none">
+				<li className="order-5 sm:order-none hover:text-secondary-dark">
 					<OutgoingLink
 						name="Teamfight Tactics"
 						href="https://teamfighttactics.leagueoflegends.com"
 					/>
 				</li>
 
-				<li className="order-2 sm:order-none">
+				<li className="order-2 sm:order-none hover:text-secondary-dark">
 					<OutgoingLink
 						name="Riot Games API"
 						href="https://developer.riotgames.com"
 					/>
 				</li>
 
-				<li className="order-4 sm:order-none">
+				<li className="order-4 sm:order-none hover:text-secondary-dark">
 					<OutgoingLink
 						name="CommunityDragon"
 						href="https://communitydragon.org"
 					/>
 				</li>
 
-				<li className="order-6 sm:order-none">
+				<li className="order-6 sm:order-none hover:text-secondary-dark">
 					<OutgoingLink
 						name="Source code"
 						href="https://github.com/Neukz/summoners"

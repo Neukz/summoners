@@ -5,7 +5,7 @@ const Home = () => {
 		<>
 			<div className="flex justify-center items-center md:flex-col">
 				<header className="hidden sm:block">
-					<h1 className="text-2xl md:text-3xl lg:text-4xl">
+					<h1 className="font-montserrat text-2xl md:text-3xl lg:text-4xl">
 						<span className="text-secondary">LoL</span> &amp;{' '}
 						<span className="text-secondary">TFT</span> stats for your favorite{' '}
 						<span className="text-secondary">Summoners</span>.

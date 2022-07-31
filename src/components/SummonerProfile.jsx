@@ -13,7 +13,7 @@ const SummonerProfile = () => {
 				alt=""
 			/>
 
-			<h2 className="text-lg font-bold">{summoner.name}</h2>
+			<h2 className="text-lg font-montserrat font-semibold">{summoner.name}</h2>
 
 			<div className="text-slate-400 text-sm">
 				Level {summoner.summonerLevel}

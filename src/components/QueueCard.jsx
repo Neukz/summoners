@@ -5,7 +5,7 @@ const QueueCard = ({ queue }) => {
 	}
 
 	return (
-		<div className="rounded-xl divide-y divide-slate-600 bg-primary-light text-slate-400 text-sm">
+		<div className="rounded-xl divide-y divide-slate-600 bg-primary-dark text-slate-400 text-sm shadow-md">
 			{/* Queue */}
 			<h3 className="text-white px-4 py-2">{queue.queueType}</h3>
 

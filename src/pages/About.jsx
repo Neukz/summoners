@@ -1,8 +1,8 @@
 const About = () => {
 	return (
-		<div className="divide-y divide-slate-500 text-lg text-justify sm:text-xl ">
+		<div className="divide-y divide-slate-500 text-lg text-justify-fixed sm:text-xl ">
 			<header className="py-4">
-				<h1 className="text-center text-2xl md:text-left md:text-3xl lg:text-4xl">
+				<h1 className="font-montserrat text-center text-2xl md:text-left md:text-3xl lg:text-4xl">
 					About
 				</h1>
 			</header>
@@ -17,7 +17,7 @@ const About = () => {
 				Summoners is a personal and open source project created by Kacper
 				Neumann. The app uses author's{' '}
 				<a
-					className="text-sky-400"
+					className="text-blue-600 hover:text-blue-700"
 					href="https://github.com/Neukz/neukz-api"
 					target="_blank"
 				>
@@ -31,7 +31,7 @@ const About = () => {
 			<p className="py-4">
 				Summoners was created under Riot Games'{' '}
 				<a
-					className="text-sky-400"
+					className="text-blue-600 hover:text-blue-700"
 					href="https://www.riotgames.com/legal"
 					target="_blank"
 				>

@@ -22,7 +22,7 @@ const SearchSummonerForm = () => {
 			<div className="flex justify-center space-x-4 mb-4">
 				{/* Summoner name text field */}
 				<input
-					className="outline-none w-full bg-primary-light rounded-full pl-4 placeholder:text-slate-400 caret-secondary max-w-md"
+					className="outline-none w-full bg-primary-light rounded-full pl-4 shadow max-w-md placeholder:text-slate-400 focus:shadow-md"
 					type="text"
 					placeholder="Name"
 					required
@@ -46,7 +46,7 @@ const SearchSummonerForm = () => {
 			<div className="flex flex-wrap justify-center gap-3">
 				{regions.map(region => (
 					<abbr
-						className={`no-underline rounded px-2 py-1 cursor-pointer hover:translate-y-1 duration-100 ${
+						className={`no-underline rounded px-2 py-1 font-medium cursor-pointer shadow hover:translate-y-1 duration-100 ${
 							region.abbreviation === selectedRegion
 								? 'bg-secondary text-primary-dark'
 								: 'bg-primary-light'
