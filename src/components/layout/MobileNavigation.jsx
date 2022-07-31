@@ -25,7 +25,7 @@ const MobileNavigation = () => {
 
 			{/* Mobile navigation */}
 			<div
-				className={`bg-primary-dark text-secondary-light fixed -z-10 h-screen right-0 top-0 py-20 duration-300 ${
+				className={`bg-primary-dark text-secondary-light absolute -z-10 h-screen right-0 top-0 py-20 duration-300 ${
 					!isOpen && 'translate-x-full'
 				}`}
 			>

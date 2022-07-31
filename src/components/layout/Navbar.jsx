@@ -4,7 +4,7 @@ import MobileNavigation from './MobileNavigation';
 
 const Navbar = () => {
 	return (
-		<nav className="bg-primary-dark text-secondary-light w-full z-10">
+		<nav className="bg-primary-dark text-secondary-light w-full z-10 relative">
 			<div className="container mx-auto p-4 flex justify-between items-center">
 				<Link to="/" className="text-xl font-semibold" translate="no">
 					Summoners
