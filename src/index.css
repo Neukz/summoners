@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	html,
-	body {
-		@apply overflow-x-hidden bg-primary text-white;
-	}
+/* Roboto and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;500;600&display=swap');
 
+@layer base {
 	#root {
-		@apply flex flex-col min-h-screen;
+		@apply flex flex-col min-h-screen overflow-x-hidden bg-primary text-white font-open-sans;
+	}
+}
+
+@layer utilities {
+	.text-justify-fixed {
+		text-align: justify;
+		word-spacing: -2px;
 	}
 }
