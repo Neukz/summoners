@@ -29,18 +29,24 @@ const Summoner = () => {
 
 	return (
 		<Loading>
-			<SummonerProfile />
+			<div className="bg-primary-light rounded-xl pt-2 pb-4">
+				<SummonerProfile />
 
-			<div className="flex flex-col flex-wrap justify-center items-center gap-2 md:flex-row">
-				{/* LoL ranking */}
-				{LoLStats.map(queue => (
-					<QueueCard queue={queue} key={queue.queueType} />
-				))}
+				{!LoLStats.length && !TFTStats.length ? (
+					<h3 className="text-center">No stats to show</h3>
+				) : (
+					<div className="flex flex-col flex-wrap justify-center items-center gap-2 md:flex-row">
+						{/* LoL ranks */}
+						{LoLStats.map(queue => (
+							<QueueCard queue={queue} key={queue.queueType} />
+						))}
 
-				{/* TFT ranking */}
-				{TFTStats.map(queue => (
-					<QueueCard queue={queue} key={queue.queueType} />
-				))}
+						{/* TFT ranks */}
+						{TFTStats.map(queue => (
+							<QueueCard queue={queue} key={queue.queueType} />
+						))}
+					</div>
+				)}
 			</div>
 		</Loading>
 	);
