@@ -14,3 +14,12 @@ export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 // Set loading
 export const SET_LOADING = 'SET_LOADING';
+
+// Get favorites from local storage
+export const GET_FAVORITES = 'GET_FAVORITES';
+
+// Add summoner to favorites
+export const ADD_FAVORITE = 'ADD_FAVORITE';
+
+// Remove summoner from favorites
+export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';

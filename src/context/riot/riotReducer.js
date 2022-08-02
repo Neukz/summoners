@@ -20,6 +20,24 @@ const riotReducer = (state, { type, payload }) => {
 				TFTStats: []
 			};
 
+		case types.GET_FAVORITES:
+			return {
+				...state,
+				favorites: payload
+			};
+
+		case types.ADD_FAVORITE:
+			return {
+				...state,
+				favorites: [payload, ...state.favorites]
+			};
+
+		case types.REMOVE_FAVORITE:
+			return {
+				...state,
+				favorites: state.favorites.filter(fav => fav.puuid !== payload.puuid)
+			};
+
 		case types.SET_ERROR:
 			return {
 				...state,

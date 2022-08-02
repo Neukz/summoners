@@ -11,6 +11,7 @@ export const RiotContextProvider = ({ children }) => {
 		summoner: {},
 		LoLStats: [],
 		TFTStats: [],
+		favorites: [],
 		error: null,
 		loading: false
 	};
@@ -39,7 +40,57 @@ export const RiotContextProvider = ({ children }) => {
 	// Clear Summoner
 	const clearSummoner = () => dispatch({ type: types.CLEAR_SUMMONER });
 
-	// Clear Error
+	// Get favorites
+	const getFavorites = () => {
+		const favorites = localStorage.getItem('favorites');
+		if (favorites) {
+			dispatch({ type: types.GET_FAVORITES, payload: JSON.parse(favorites) });
+		}
+	};
+
+	// Add favorite
+	const addFavorite = summoner => {
+		// Check if there are any favorites in local storage
+		const favorites = JSON.parse(localStorage.getItem('favorites'));
+		if (favorites) {
+			// Check if the summoner is already in the favorites
+			if (favorites.find(fav => fav.puuid === summoner.puuid)) {
+				return;
+			}
+
+			// Add the summoner to favorites
+			favorites.push(summoner);
+			localStorage.setItem('favorites', JSON.stringify(favorites));
+		} else {
+			// Create a new array with the summoner
+			localStorage.setItem('favorites', JSON.stringify([summoner]));
+		}
+
+		dispatch({
+			type: types.ADD_FAVORITE,
+			payload: summoner
+		});
+	};
+
+	// Remove favorite
+	const removeFavorite = summoner => {
+		// Check if there are any favorites in local storage
+		const favorites = JSON.parse(localStorage.getItem('favorites'));
+		if (favorites) {
+			// Remove the summoner from favorites
+			const newFavorites = favorites.filter(
+				fav => fav.puuid !== summoner.puuid
+			);
+			localStorage.setItem('favorites', JSON.stringify(newFavorites));
+		}
+
+		dispatch({
+			type: types.REMOVE_FAVORITE,
+			payload: summoner
+		});
+	};
+
+	// Clear error
 	const clearError = () => dispatch({ type: types.CLEAR_ERROR });
 
 	return (
@@ -48,6 +99,9 @@ export const RiotContextProvider = ({ children }) => {
 				...state,
 				getSummoner,
 				clearSummoner,
+				getFavorites,
+				addFavorite,
+				removeFavorite,
 				clearError
 			}}
 		>
