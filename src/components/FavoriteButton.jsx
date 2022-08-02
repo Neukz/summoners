@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { AiFillStar } from 'react-icons/ai';
+import { useParams } from 'react-router-dom';
 
 import RiotContext from '../context/riot/RiotContext';
 
@@ -12,12 +13,14 @@ const FavoriteButton = () => {
 		favorites.map(fav => fav.puuid).includes(summoner.puuid)
 	);
 
+	const { region } = useParams();
+
 	// Toggle favorite status
 	const toggleFavorite = () => {
 		if (isFavorite) {
-			removeFavorite(summoner);
+			removeFavorite(summoner.puuid);
 		} else {
-			addFavorite(summoner);
+			addFavorite(summoner, region);
 		}
 		setIsFavorite(!isFavorite);
 	};

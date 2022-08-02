@@ -35,7 +35,7 @@ const riotReducer = (state, { type, payload }) => {
 		case types.REMOVE_FAVORITE:
 			return {
 				...state,
-				favorites: state.favorites.filter(fav => fav.puuid !== payload.puuid)
+				favorites: state.favorites.filter(fav => fav.puuid !== payload)
 			};
 
 		case types.SET_ERROR:

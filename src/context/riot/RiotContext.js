@@ -49,7 +49,7 @@ export const RiotContextProvider = ({ children }) => {
 	};
 
 	// Add favorite
-	const addFavorite = summoner => {
+	const addFavorite = (summoner, region) => {
 		// Check if there are any favorites in local storage
 		const favorites = JSON.parse(localStorage.getItem('favorites'));
 		if (favorites) {
@@ -58,8 +58,11 @@ export const RiotContextProvider = ({ children }) => {
 				return;
 			}
 
+			// Add region to summoner object
+			summoner.region = region;
+
 			// Add the summoner to favorites
-			favorites.push(summoner);
+			favorites.unshift(summoner);
 			localStorage.setItem('favorites', JSON.stringify(favorites));
 		} else {
 			// Create a new array with the summoner
@@ -73,20 +76,18 @@ export const RiotContextProvider = ({ children }) => {
 	};
 
 	// Remove favorite
-	const removeFavorite = summoner => {
+	const removeFavorite = puuid => {
 		// Check if there are any favorites in local storage
 		const favorites = JSON.parse(localStorage.getItem('favorites'));
 		if (favorites) {
 			// Remove the summoner from favorites
-			const newFavorites = favorites.filter(
-				fav => fav.puuid !== summoner.puuid
-			);
+			const newFavorites = favorites.filter(fav => fav.puuid !== puuid);
 			localStorage.setItem('favorites', JSON.stringify(newFavorites));
 		}
 
 		dispatch({
 			type: types.REMOVE_FAVORITE,
-			payload: summoner
+			payload: puuid
 		});
 	};
 
