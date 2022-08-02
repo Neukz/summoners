@@ -2,46 +2,46 @@
 export const regions = [
 	{
 		name: 'North America',
-		abbreviation: 'NA'
+		abbreviation: 'na'
 	},
 	{
 		name: 'Europe West',
-		abbreviation: 'EUW'
+		abbreviation: 'euw'
 	},
 	{
 		name: 'Europe Nordic & East',
-		abbreviation: 'EUNE'
+		abbreviation: 'eune'
 	},
 	{
 		name: 'Republic of Korea',
-		abbreviation: 'KR'
+		abbreviation: 'kr'
 	},
 	{
 		name: 'Brazil',
-		abbreviation: 'BR'
+		abbreviation: 'br'
 	},
 	{
 		name: 'Japan',
-		abbreviation: 'JP'
+		abbreviation: 'jp'
 	},
 	{
 		name: 'Russia',
-		abbreviation: 'RU'
+		abbreviation: 'ru'
 	},
 	{
 		name: 'Oceania',
-		abbreviation: 'OCE'
+		abbreviation: 'oce'
 	},
 	{
 		name: 'Turkey',
-		abbreviation: 'TR'
+		abbreviation: 'tr'
 	},
 	{
 		name: 'Latin America North',
-		abbreviation: 'LAN'
+		abbreviation: 'lan'
 	},
 	{
 		name: 'Latin America South',
-		abbreviation: 'LAS'
+		abbreviation: 'las'
 	}
 ];

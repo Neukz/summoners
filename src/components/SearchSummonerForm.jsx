@@ -14,11 +14,11 @@ const SearchSummonerForm = () => {
 		e.preventDefault();
 
 		// Navigate to Summoner page
-		navigate(`summoners/${selectedRegion.toLowerCase()}/${summonerName}`);
+		navigate(`summoners/${selectedRegion}/${summonerName}`);
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="pb-6">
 			<div className="flex justify-center space-x-4 mb-4">
 				{/* Summoner name text field */}
 				<input
@@ -55,7 +55,7 @@ const SearchSummonerForm = () => {
 						key={region.abbreviation}
 						onClick={() => setSelectedRegion(region.abbreviation)}
 					>
-						{region.abbreviation}
+						{region.abbreviation.toUpperCase()}
 					</abbr>
 				))}
 			</div>
