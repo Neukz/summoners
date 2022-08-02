@@ -1,6 +1,17 @@
+import { useContext, useEffect } from 'react';
 import SearchSummonerForm from '../components/SearchSummonerForm';
+import Favorites from '../components/Favorites';
+
+import RiotContext from '../context/riot/RiotContext';
 
 const Home = () => {
+	const { getFavorites } = useContext(RiotContext);
+
+	useEffect(() => {
+		// Get favorites on mount
+		getFavorites();
+	}, []);
+
 	return (
 		<>
 			<div className="flex justify-center items-center md:flex-col">
@@ -17,7 +28,11 @@ const Home = () => {
 					alt=""
 				/>
 			</div>
-			<SearchSummonerForm />
+
+			<div className="divide-y divide-slate-600">
+				<SearchSummonerForm />
+				<Favorites />
+			</div>
 		</>
 	);
 };
