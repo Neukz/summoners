@@ -6,7 +6,7 @@ const SummonerProfile = () => {
 	const { summoner } = useContext(RiotContext);
 
 	return (
-		<div className="flex flex-col items-center rounded-xl p-2 text-center">
+		<div className="flex flex-col items-center rounded-xl mb-3">
 			<img
 				className="w-24 rounded-full"
 				src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${summoner.profileIconId}.jpg`}
