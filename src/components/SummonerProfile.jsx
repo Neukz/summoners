@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import FavoriteButton from './FavoriteButton';
 
 import RiotContext from '../context/riot/RiotContext';
 
@@ -13,7 +14,12 @@ const SummonerProfile = () => {
 				alt=""
 			/>
 
-			<h2 className="text-lg font-montserrat font-semibold">{summoner.name}</h2>
+			<div className="flex items-center space-x-1">
+				<h2 className="font-montserrat font-semibold text-lg">
+					{summoner.name}
+				</h2>
+				<FavoriteButton />
+			</div>
 
 			<div className="text-slate-400 text-sm">
 				Level {summoner.summonerLevel}

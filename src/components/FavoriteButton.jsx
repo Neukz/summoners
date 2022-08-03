@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import { AiFillStar } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
+import { AiFillStar } from 'react-icons/ai';
 
 import RiotContext from '../context/riot/RiotContext';
 
@@ -28,7 +28,7 @@ const FavoriteButton = () => {
 	return (
 		<AiFillStar
 			onClick={toggleFavorite}
-			className={`text-2xl cursor-pointer absolute top-2 right-2 ${
+			className={`cursor-pointer text-xl ${
 				// Set icon color depending on whether summoner is in favorites
 				isFavorite ? 'text-yellow-500' : 'text-slate-500 hover:text-slate-400'
 			}`}
