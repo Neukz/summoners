@@ -50,6 +50,9 @@ export const RiotContextProvider = ({ children }) => {
 
 	// Add favorite
 	const addFavorite = (summoner, region) => {
+		// Add region to summoner object
+		summoner.region = region;
+
 		// Check if there are any favorites in local storage
 		const favorites = JSON.parse(localStorage.getItem('favorites'));
 		if (favorites) {
@@ -57,9 +60,6 @@ export const RiotContextProvider = ({ children }) => {
 			if (favorites.find(fav => fav.puuid === summoner.puuid)) {
 				return;
 			}
-
-			// Add region to summoner object
-			summoner.region = region;
 
 			// Add the summoner to favorites
 			favorites.unshift(summoner);
