@@ -9,32 +9,36 @@ const Favorites = () => {
 
 	return (
 		<div className="flex flex-wrap gap-3 pt-6">
-			{favorites.map(fav => (
-				<Link
-					to={`summoners/${fav.region}/${fav.name}`}
-					className="flex items-center space-x-2 rounded-xl bg-primary-light p-2"
-					key={fav.puuid}
-				>
-					<img
-						className="w-12 rounded-full"
-						src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${fav.profileIconId}.jpg`}
-						alt=""
-					/>
+			{favorites.length ? (
+				favorites.map(({ name, region, profileIconId, puuid }) => (
+					<Link
+						to={`summoners/${region}/${name}`}
+						className="flex items-center space-x-2 rounded-xl bg-primary-light p-2"
+						key={puuid}
+					>
+						<img
+							className="w-12 rounded-full"
+							src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${profileIconId}.jpg`}
+							alt=""
+						/>
 
-					<div>
-						<div className="font-montserrat">{fav.name}</div>
-						<div className="text-slate-400">{fav.region.toUpperCase()}</div>
-					</div>
+						<div>
+							<div className="font-montserrat">{name}</div>
+							<div className="text-slate-400">{region.toUpperCase()}</div>
+						</div>
 
-					<AiOutlineClose
-						onClick={e => {
-							e.preventDefault();
-							removeFavorite(fav.puuid);
-						}}
-						className="text-xl text-red-400 hover:text-red-500"
-					/>
-				</Link>
-			))}
+						<AiOutlineClose
+							onClick={e => {
+								e.preventDefault();
+								removeFavorite(puuid);
+							}}
+							className="text-xl text-red-400 hover:text-red-500"
+						/>
+					</Link>
+				))
+			) : (
+				<h2>Your Favorites will appear here...</h2>
+			)}
 		</div>
 	);
 };
