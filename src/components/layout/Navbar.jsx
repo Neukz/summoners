@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import OutgoingLink from '../OutgoingLink';
 import MobileNavigation from './MobileNavigation';
+import { navbarLinks } from '../../constants/navbarLinks';
 
 const Navbar = () => {
 	return (
@@ -15,19 +16,17 @@ const Navbar = () => {
 				</Link>
 
 				{/* Standard navigation hidden on mobile */}
-				<div className="hidden space-x-8 md:flex">
-					<Link to="about">About</Link>
-
-					<OutgoingLink
-						name="League of Legends"
-						href="https://leagueoflegends.com"
-					/>
-
-					<OutgoingLink
-						name="Teamfight Tactics"
-						href="https://teamfighttactics.leagueoflegends.com"
-					/>
-				</div>
+				<ul className="hidden space-x-8 md:flex">
+					{navbarLinks.map(({ name, url, outgoing }, index) => (
+						<li key={index}>
+							{outgoing ? (
+								<OutgoingLink name={name} href={url} />
+							) : (
+								<Link to={url}>{name}</Link>
+							)}
+						</li>
+					))}
+				</ul>
 
 				<MobileNavigation />
 			</div>

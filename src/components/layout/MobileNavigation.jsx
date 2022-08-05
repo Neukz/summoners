@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import OutgoingLink from '../OutgoingLink';
+import { navbarLinks } from '../../constants/navbarLinks';
 
 const MobileNavigation = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -29,24 +30,16 @@ const MobileNavigation = () => {
 					!isOpen && 'translate-x-full'
 				}`}
 			>
-				<ul className="space-y-2 px-8">
-					<li>
-						<Link to="about">About Summoners</Link>
-					</li>
-
-					<li>
-						<OutgoingLink
-							name="League of Legends"
-							href="https://leagueoflegends.com"
-						/>
-					</li>
-
-					<li>
-						<OutgoingLink
-							name="Teamfight Tactics"
-							href="https://teamfighttactics.leagueoflegends.com"
-						/>
-					</li>
+				<ul className="space-y-2 px-6">
+					{navbarLinks.map(({ name, url, outgoing }, index) => (
+						<li key={index}>
+							{outgoing ? (
+								<OutgoingLink name={name} href={url} />
+							) : (
+								<Link to={url}>{name}</Link>
+							)}
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>
