@@ -13,6 +13,7 @@ const NotFound = () => {
 		return () => {
 			clearError();
 		};
+		// eslint-disable-next-line
 	}, []);
 
 	return (

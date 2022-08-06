@@ -21,7 +21,7 @@ const About = () => {
 
 			<p className="py-4">
 				Summoners is a personal and open source project created by Kacper
-				Neumann. The app uses author's{' '}
+				Neumann. The app uses author's {/* eslint-disable-next-line */}
 				<a
 					className="text-blue-600 hover:text-blue-700"
 					href="https://github.com/Neukz/neukz-api"
@@ -35,7 +35,7 @@ const About = () => {
 			</p>
 
 			<p className="py-4">
-				Summoners was created under Riot Games'{' '}
+				Summoners was created under Riot Games' {/* eslint-disable-next-line */}
 				<a
 					className="text-blue-600 hover:text-blue-700"
 					href="https://www.riotgames.com/legal"

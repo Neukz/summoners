@@ -11,6 +11,7 @@ const Home = () => {
 	useEffect(() => {
 		// Get favorites on mount
 		getFavorites();
+		// eslint-disable-next-line
 	}, []);
 
 	return (

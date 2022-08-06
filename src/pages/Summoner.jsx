@@ -34,6 +34,7 @@ const Summoner = () => {
 		return () => {
 			clearSummoner();
 		};
+		// eslint-disable-next-line
 	}, [region, summonerName, error]);
 
 	return (
