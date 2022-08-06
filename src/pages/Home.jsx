@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import SearchSummonerForm from '../components/SearchSummonerForm';
 import Favorites from '../components/Favorites';
 
@@ -14,6 +15,10 @@ const Home = () => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Summoners</title>
+			</Helmet>
+
 			<div className="flex justify-center items-center md:flex-col">
 				<header className="hidden sm:block">
 					<h1 className="font-montserrat text-2xl md:text-3xl lg:text-4xl">

@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Loading from '../components/layout/Loading';
 
 import RiotContext from '../context/riot/RiotContext';
@@ -16,6 +17,11 @@ const NotFound = () => {
 
 	return (
 		<Loading>
+			{/* Show error reason in title */}
+			<Helmet>
+				<title>{error ? error.reason : 'Page Not Found'}</title>
+			</Helmet>
+
 			<div className="flex flex-col justify-center items-center text-center space-y-4">
 				<header>
 					<h1 className="text-6xl md:text-7xl">{error ? error.status : 404}</h1>
