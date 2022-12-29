@@ -6,13 +6,8 @@ export const navbarLinks = [
 		outgoing: false
 	},
 	{
-		name: 'League of Legends',
-		url: 'https://leagueoflegends.com',
-		outgoing: true
-	},
-	{
-		name: 'Teamfight Tactics',
-		url: 'https://teamfighttactics.leagueoflegends.com',
+		name: 'Source',
+		url: 'https://github.com/Neukz/summoners',
 		outgoing: true
 	}
 ];
